@@ -1,0 +1,32 @@
+ion-content {
+  padding: 16px;
+}
+
+/* Animación de la card principal */
+ion-card {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: zoomIn 0.5s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animación de la lista */
+ion-list {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: slideUp 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

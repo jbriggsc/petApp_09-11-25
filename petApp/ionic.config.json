@@ -1,0 +1,7 @@
+{
+  "name": "petApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
