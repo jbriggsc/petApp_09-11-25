@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  
   {
     path: '',
     redirectTo: 'login',
@@ -9,22 +9,30 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./pages/login/login.page').then(m => m.LoginPage)
   },
   {
     path: 'dashboard',
-    loadComponent: () => import('./pages/dashboard/dashboard.page').then( m => m.DashboardPage)
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./pages/dashboard/dashboard.page').then(m => m.DashboardPage)
   },
   {
     path: 'mascota',
-    loadComponent: () => import('./pages/mascota/mascota.page').then( m => m.MascotaPage)
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./pages/mascota/mascota.page').then(m => m.MascotaPage)
   },
   {
     path: 'vacunas',
-    loadComponent: () => import('./pages/vacunas/vacunas.page').then( m => m.VacunasPage)
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./pages/vacunas/vacunas.page').then(m => m.VacunasPage)
   },
   {
     path: 'citas',
-    loadComponent: () => import('./pages/citas/citas.page').then( m => m.CitasPage)
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./pages/citas/citas.page').then(m => m.CitasPage)
   },
+  
+  
+  //ruta 404
+  // { path: '**', loadComponent: () => import('./pages/not-found/not-found.page').then(m => m.NotFoundPage) },
 ];
