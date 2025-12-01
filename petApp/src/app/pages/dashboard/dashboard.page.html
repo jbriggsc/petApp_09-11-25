@@ -6,7 +6,7 @@
   <ion-buttons slot="start">
       <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
-    
+
   <ion-buttons slot="end">
   <ion-button (click)="cerrarSesion()">
     Cerrar sesión
@@ -26,14 +26,27 @@
       <ion-card-subtitle>Resumen de tu mascota</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-card-content>
+    <!-- <ion-card-content>
       <p>Mascota: <strong>{{ mascota.nombre }}</strong> ({{ mascota.especie }})</p>
       <p>Edad: {{ mascota.edad }} años</p>
       <p>Próxima vacuna: {{ mascota.proximaVacuna }}</p>
 
       <p>Salud general:</p>
       <ion-progress-bar [value]="mascota.saludGeneral"></ion-progress-bar>
-    </ion-card-content>
+    </ion-card-content> -->
+
+
+
+    <ion-card-content *ngIf="mascota">
+  <p>Mascota: <strong>{{ mascota.nombre }}</strong> ({{ mascota.especie }})</p>
+  <p>Raza: {{ mascota.raza }}</p>
+  <p>Edad: {{ mascota.edad }} años</p>
+  <p>Peso: {{ mascota.peso }} kg</p>
+  <p>Notas: {{ mascota.notas }}</p>
+</ion-card-content>
+
+
+
   </ion-card>
 
   <ion-list>
