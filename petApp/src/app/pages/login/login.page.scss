@@ -10,6 +10,13 @@ ion-card {
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
+
+ion-card-title,
+ion-card-subtitle {
+  color: var(--ion-text-color);
+}
+
+
 @keyframes fadeInUp {
   to {
     opacity: 1;

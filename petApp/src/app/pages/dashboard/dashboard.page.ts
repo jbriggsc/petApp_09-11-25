@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DashboardPage {
 
@@ -40,5 +41,18 @@ export class DashboardPage {
   irACitas() {
     this.router.navigate(['/citas']);
   }
+
+ // toggleDarkMode(event: any) {
+  //document.body.classList.toggle('dark', event.detail.checked);
+//}
+
+toggleDarkMode(event: any) {
+  if (event.detail.checked) {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.remove('dark');
+  }
+}
+
 
 }
