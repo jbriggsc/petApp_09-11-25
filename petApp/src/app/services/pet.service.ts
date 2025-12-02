@@ -1,4 +1,7 @@
 
+import { HttpClient } from '@angular/common/http';
+
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -9,6 +12,7 @@ export interface Mascota {
   edad: number;
   peso: number;
   notas: string;
+  imagen?: string;
 }
 
 export interface Vacuna {

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mascotas desde API</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start">
+      <ion-button fill="clear" color="light" (click)="volverAlDashboard()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-button>
+
+    <ion-title>Mascotas desde API</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list *ngIf="pets.length > 0; else noData">
+    <ion-item *ngFor="let pet of pets">
+      <ion-label>
+        <h2>{{ pet.name }}</h2>
+        <p>Email dueño: {{ pet.email }}</p>
+        <p>Tipo: {{ pet.type }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noData>
+    <ion-text color="medium">
+      <p class="ion-padding">
+        No hay mascotas para mostrar. Desliza hacia abajo para actualizar.
+      </p>
+    </ion-text>
+  </ng-template>
+
+</ion-content>

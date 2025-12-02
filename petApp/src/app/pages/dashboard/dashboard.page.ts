@@ -57,6 +57,9 @@ export class DashboardPage {
     this.router.navigate(['/login']);
   }
 
+irAMascotasApi() {
+  this.router.navigate(['/pets-list']);
+}
 
 
 toggleDarkMode(event: any) {

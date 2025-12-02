@@ -16,6 +16,17 @@
       <ion-card-subtitle>{{ mascota.especie }} - {{ mascota.raza }}</ion-card-subtitle>
     </ion-card-header>
 
+    <ion-button expand="full" color="primary" (click)="tomarFoto()">
+  <ion-icon name="camera-outline" slot="start"></ion-icon>
+  Tomar foto
+</ion-button>
+
+<!-- Mostrar la foto si existe -->
+<div *ngIf="mascota?.imagen" class="ion-text-center ion-padding">
+  <img [src]="mascota.imagen" style="width: 200px; border-radius: 12px;">
+</div>
+
+
     <ion-card-content>
       <p><strong>Edad:</strong> {{ mascota.edad }} años</p>
       <p><strong>Peso:</strong> {{ mascota.pesoKg }} kg</p>

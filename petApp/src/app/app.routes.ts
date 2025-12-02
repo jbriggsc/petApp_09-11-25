@@ -31,6 +31,10 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     loadComponent: () => import('./pages/citas/citas.page').then(m => m.CitasPage)
   },
+  {
+    path: 'pets-list',
+    loadComponent: () => import('./pages/pets-list/pets-list.page').then( m => m.PetsListPage)
+  },
   
   
   //ruta 404
